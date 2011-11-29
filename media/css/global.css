@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: Arial
+}
+
+body {
+  padding: 40px 140px
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: normal
+}
+
+p {
+  line-height: 150%;
+  padding: 10px 0;
+  text-indent: 45px
+}
+
+a {
+  color: blue
+}
+
+a:hover {
+  color: red
+}
+
+a[rel=boxed] {
+  text-decoration: none;
+  border-bottom: 1px dotted blue
+}
+
+a[rel=boxed]:hover {
+  border-bottom-color: red
+}
+
+form button {
+  padding: 3px 10px
+}
+
+form textarea {
+  padding: 4px;
+  width: 350px;
+  min-width: 350px !important;
+  max-width: 350px !important;
+  height: 150px;
+  min-height: 150px !important;
+  max-height: 150px !important
+}
+
+form dt.submit {
+  text-align: right;
+  margin-top: 10px
+}

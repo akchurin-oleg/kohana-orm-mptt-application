@@ -1,0 +1,1 @@
+<div class="reply"><?php echo HTML::anchor(Route::get('default')->uri(array('controller' => 'main', 'action' => 'reply')), __('Post reply'), array('rel' => 'boxed')) ?></div>
