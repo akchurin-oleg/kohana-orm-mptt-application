@@ -5,19 +5,8 @@ return array
 	'default' => array
 	(
 		'type'       => 'mysql',
-		'connection' => array(
-			/**
-			 * The following options are available for MySQL:
-			 *
-			 * string   hostname     server hostname, or socket
-			 * string   database     database name
-			 * string   username     database username
-			 * string   password     database password
-			 * boolean  persistent   use persistent connections?
-			 * array    variables    system variables as "key => value" pairs
-			 *
-			 * Ports and sockets may be appended to the hostname.
-			 */
+		'connection' => array
+		(
 			'hostname'   => 'localhost',
 			'database'   => 'test_mptt',
 			'username'   => 'root',
@@ -28,5 +17,5 @@ return array
 		'charset'      => 'utf8',
 		'caching'      => FALSE,
 		'profiling'    => TRUE,
-	),
+	)
 );
