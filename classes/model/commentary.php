@@ -17,6 +17,17 @@ class Model_Commentary extends Model_MPTT {
 	protected $_path_calculation_enabled = FALSE;
 
 	/**
+	 * Automatically add the date to the commentary
+	 *
+	 * @var array
+	 */
+	protected $_created_column = array
+	(
+		'column' => 'date',
+		'format' => 'Y-m-d H:i:s'
+	);
+
+	/**
 	 * Model rules
 	 *
 	 * @return array
@@ -79,6 +90,19 @@ class Model_Commentary extends Model_MPTT {
 	public function new_scope($scope, array $fields = array())
 	{
 		return parent::new_scope($scope, $fields);
+	}
+
+	/**
+	 * Returns commentary as formatted HTML
+	 *
+	 * @return string
+	 */
+	public function commentary()
+	{
+		if ( ! $this->loaded())
+			return FALSE;
+
+		return '<p>'.str_replace(array("\r", "\n"), array('', '</p><p>'), $this->commentary).'</p>';
 	}
 
 } // End Model_Commentary

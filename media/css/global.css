@@ -55,3 +55,43 @@ form dt.submit {
   text-align: right;
   margin-top: 10px
 }
+
+/* ----------------------- COMMENTARIES ----------------------- */
+
+#commentaries dl{
+  margin-left: 30px;
+  margin-top: 30px
+}
+
+#commentaries dl>dt{
+  overflow: hidden;
+  position: relative;
+}
+
+#commentaries dl>dd{
+  margin: 5px 30px 25px 0;
+  line-height: 130%;
+}
+
+#commentaries dt>a{
+  display: block;
+  float: left;
+  height: 40px;
+  line-height: 50px;
+  text-decoration: none;
+}
+
+#commentaries dd>p {
+  margin-bottom: 5px;
+  line-height: 130%;
+  text-indent: 0
+}
+
+#commentaries dd>p:last-child {
+  margin-bottom: 0
+}
+
+#commentaries dt .date {
+  font-size: 10px;
+  color: #ababab
+}

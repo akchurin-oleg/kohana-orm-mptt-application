@@ -4,7 +4,11 @@ class Controller_Main extends Controller_Template_Page {
 
 	public function action_index()
 	{
-		$commentaries = array();
+		$commentaries = ORM::factory('commentary')
+			->new_root(1)
+			->children()
+			->find_all()
+			->as_array();
 
 		$this->template->title = __('MPTT test');
 
