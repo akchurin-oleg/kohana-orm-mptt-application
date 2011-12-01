@@ -70,9 +70,12 @@
   width: 100%;
   height: 100%;
   background: #fff;
-  -moz-box-shadow: 0 0 5px #000;
-  -webkit-box-shadow: 0 0 5px #000;
-  box-shadow: 0 0 5px #000;
+  -moz-box-shadow: 0 0 25px rgba(0,0,0,0.31);
+  -webkit-box-shadow: 0 0 25px rgba(0,0,0,0.31);
+  box-shadow: 0 0 25px rgba(0,0,0,0.31);
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
 }
 
 #fancybox-content {
@@ -83,7 +86,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1102;
-  border: 0px solid #fff;
+  padding: 15px
 }
 
 #fancybox-hide-sel-frame {
@@ -298,5 +301,16 @@
 }
 
 #fancybox-content p {
-  margin-bottom: 5px
+  margin-bottom: 5px;
+  text-indent: 0
+}
+
+#fancybox-content ul.box-menu {
+  list-style-type: none
+}
+
+#fancybox-content ul.box-menu li {
+  display: inline;
+  margin-right: 20px;
+  font-size: 20px
 }

@@ -63,6 +63,43 @@ class Controller_Main extends Controller_Template_Page {
 			->bind('errors', $errors);
 	}
 
+	public function action_delete_dialog()
+	{
+		$commentary = ORM::factory('commentary', array(
+			'id' => $this->request->param('id')
+			));
+
+		if ( ! $commentary->loaded())
+		{
+			throw new HTTP_Exception_404;
+		}
+
+		$this->template->title = __('Attention!');
+
+		$this->template->content = View::factory('main/delete')
+			->bind('commentary', $commentary);
+	}
+
+	public function action_delete()
+	{
+		$commentary = ORM::factory('commentary', array(
+			'id' => $this->request->param('id')
+			));
+
+		if ( ! $commentary->loaded())
+		{
+			throw new HTTP_Exception_404;
+		}
+
+		$this->auto_render = FALSE;
+
+		$commentary->delete();
+
+		$this->request->redirect(Route::get('default')->uri(array(
+			'controller' => $this->request->controller()
+			)));
+	}
+
 	public function action_verify()
 	{
 		// Only AJAX requests allowed

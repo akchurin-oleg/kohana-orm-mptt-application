@@ -5,7 +5,10 @@
 	</dl>
 	<dl>
 		<dt class="submit">
-			<?php echo Form::button('reply', __('Post reply')) ?>
+			<ul class="box-menu">
+				<li><?php echo Form::button('reply', __('Post reply')) ?></li>
+				<li><?php echo HTML::anchor('', __('Cancel'), array('class' => 'close')) ?></li>
+			</ul>
 		</dt>
 	</dl>
 

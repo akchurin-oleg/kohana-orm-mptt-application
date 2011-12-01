@@ -2,14 +2,14 @@
 
   $(document).ready(function(){
     $("a[rel=boxed]").fancybox({
-      "overlayOpacity":     0,
+      "overlayOpacity":     0.3,
       "hideOnOverlayClick": false,
       "showCloseButton":    false,
       "width":              300,
       "speedIn":            100,
       "speedOut":           100,
       "onComplete":         function(){
-        $(document).trigger("fancybox_ready")
+        $(document).trigger("fancybox-ready")
       }
     });
 
@@ -34,6 +34,13 @@
           }
         });
 
+      return false
+    })
+  });
+
+  $(document).bind('fancybox-ready', function() {
+    $("#fancybox-content .close").click(function() {
+      $.fancybox.close();
       return false
     })
   })

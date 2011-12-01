@@ -69,7 +69,6 @@ form textarea {
 }
 
 form dt.submit {
-  text-align: right;
   margin-top: 10px
 }
 
@@ -111,6 +110,15 @@ form dt.submit {
 #commentaries dt .date {
   font-size: 10px;
   color: #ababab
+}
+
+#commentaries ul.commentary-menu {
+  list-style-type: none
+}
+
+#commentaries ul.commentary-menu li {
+  display: inline;
+  margin-right: 20px
 }
 
 /* ----------------------- OTHER ----------------------- */
