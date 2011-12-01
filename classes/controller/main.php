@@ -63,4 +63,27 @@ class Controller_Main extends Controller_Template_Page {
 			->bind('errors', $errors);
 	}
 
+	public function action_verify()
+	{
+		// Only AJAX requests allowed
+		if ( ! $this->request->is_ajax())
+		{
+			//throw new HTTP_Exception_403(__('Only AJAX requests allowed'));
+		}
+
+		// Dont't render the page
+		$this->auto_render = FALSE;
+
+		$root = ORM::factory('commentary')
+			->new_root(1);
+
+		// Verify current scope
+		$verify = $root->verify();
+
+		// Return result
+		$this->response
+			->headers('content-type', File::mime_by_ext('json'))
+			->body(json_encode(array('verify' => (int) $verify, 'error' => $root->verify_error())));
+	}
+
 } // End Controller_Main

@@ -28,14 +28,31 @@ a:hover {
   color: red
 }
 
-a[rel=boxed] {
+a[rel=boxed],
+a.ajaxed {
   text-decoration: none;
   border-bottom: 1px dotted blue
 }
 
-a[rel=boxed]:hover {
+a[rel=boxed]:hover,
+a.ajaxed:hover {
   border-bottom-color: red
 }
+
+/* ----------------------- LAYOUTS ----------------------- */
+
+#header {
+  text-align: right;
+  height: 40px
+}
+
+#header ul li {
+  display: inline;
+  margin-left: 25px;
+  list-style-type: none
+}
+
+/* ----------------------- FORMS ----------------------- */
 
 form button {
   padding: 3px 10px
@@ -94,4 +111,25 @@ form dt.submit {
 #commentaries dt .date {
   font-size: 10px;
   color: #ababab
+}
+
+/* ----------------------- OTHER ----------------------- */
+
+#verify-ok,
+#verify-bad {
+  display: none;
+  padding-right: 10px
+}
+
+#verify-ok {
+  color: green
+}
+
+#verify-bad {
+  color: red
+}
+
+#verify-bad .error {
+  border-bottom: 1px dotted red;
+  font-style: italic
 }

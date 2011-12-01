@@ -19,5 +19,13 @@
 	}
 ?>
 	</head>
-	<body><?php echo $content ?></body>
+	<body>
+		<div id="header">
+			<ul>
+				<li id="verify"><span id="verify-ok"><?php echo __('Tree is ok') ?></span><span id="verify-bad"><?php echo __('Tree is corrupted (:error)', array(':error' => '<span class="error"></span>')) ?></span><?php echo HTML::anchor(Route::get('default')->uri(array('controller' => 'main', 'action' => 'verify')), __('Verify tree'), array('class' => 'ajaxed')) ?></li>
+				<li><?php echo HTML::anchor(Route::get('default')->uri(array('controller' => 'main', 'action' => 'table')), __('Table of contents'), array('rel' => 'boxed')) ?></li>
+			</ul>
+		</div>
+		<div id="content"><?php echo $content ?></div>
+	</body>
 </html>
